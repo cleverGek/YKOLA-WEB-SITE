@@ -1,0 +1,29 @@
+<%- include("./Partials/_header")  %>
+<br><br><br>
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/url">URL verification</a></li>
+            </ol>
+            <h2 class="text-center">Verification de votre url Source </h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <section>
+        <div class="container">
+            <form action="/url" method="post">
+                <input type="text" name="url" class="form-control form-control-lg" placeholder="Https://" required>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" href="/url" class="btn btn-outline-info btn-lg ">VERIFICATION</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<%- include("./Partials/_footer")  %> 
