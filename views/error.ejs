@@ -1,3 +1,38 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+ <!-- Bootstrap CSS -->
+ <title> page d'erreur - yKola</title>
+
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!------ Include the above in your HEAD tag ---------->
+
+ <style>
+     body {
+    background: #a83f3f;
+    color: white;
+    
+}
+.btn{
+    color: #012970;
+    font-size: 50px;
+}
+.btn:hover{
+    text-decoration: none;
+}
+.page-wrap {
+    min-height: 100vh;
+}
+ </style>
+ 
+ <div class="page-wrap d-flex flex-row align-items-center">
+     <div class="container">
+         <div class="row justify-content-center">
+             <div class="col-md-12 text-center">
+                 <span class="display-1 d-block"><%= message %></span>
+                 <div class="mb-4 lead"><%= error.status %></div>
+                 <a href="/" class="btn btn-link">Accueil</a>
+             </div>
+         </div>
+     </div>
+ </div>
+ 
