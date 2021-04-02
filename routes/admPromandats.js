@@ -3,8 +3,8 @@ var ProMandats = require('../models/ProMandats');
 var router = express.Router();
 
 /* GET a amgin ressources pages */
-router.get('/addDOC', function(req, res, next) {
-  res.render('addDOC', { title: 'ykola' });
+router.get('/addPROMANDATS', function(req, res, next) {
+  res.render('addPROMANDATS', { title: 'ykola' });
 });
 
 /** post doc */

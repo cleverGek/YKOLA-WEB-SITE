@@ -4,22 +4,22 @@ var router = express.Router();
 
 /* GET a amgin ressources pages */
 router.get('/addSANTE', function(req, res, next) {
-  res.render('addDOC', { title: 'ykola' });
+  res.render('addSANTE', { title: 'ykola' });
 });
 
 /* GET a amgin ressources pages */
 router.get('/addPOLITQUE', function(req, res, next) {
-    res.render('addDOC', { title: 'ykola' });
+    res.render('addPOLITQUE', { title: 'ykola' });
   });
 
   /* GET a amgin ressources pages */
 router.get('/addSPORT', function(req, res, next) {
-    res.render('addDOC', { title: 'ykola' });
+    res.render('addSPORT', { title: 'ykola' });
   });
 
   /* GET a amgin ressources pages */
 router.get('/addCULTURE', function(req, res, next) {
-    res.render('addDOC', { title: 'ykola' });
+    res.render('addCULTURE', { title: 'ykola' });
   });
 
 /** post doc */
