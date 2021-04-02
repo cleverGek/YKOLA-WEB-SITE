@@ -40,12 +40,11 @@ app.use('/users', usersRouter);
 app.use('/', autreRouter);
 app.use('/contact', contactRouter);
 app.use('/url', urlRouter);
-app.use('/ressources', ressourcesRouter);
 
 /** admn */
 app.use('/admin', admResRouter);
 app.use('/admin', admPromandats);
-app.use('admin', admTendances);
+app.use('/admin', admTendances);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

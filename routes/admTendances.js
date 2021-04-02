@@ -8,8 +8,8 @@ router.get('/addSANTE', function(req, res, next) {
 });
 
 /* GET a amgin ressources pages */
-router.get('/addPOLITQUE', function(req, res, next) {
-    res.render('addPOLITQUE', { title: 'ykola' });
+router.get('/addPOLITIQUE', function(req, res, next) {
+    res.render('addPOLITIQUE', { title: 'ykola' });
   });
 
   /* GET a amgin ressources pages */
