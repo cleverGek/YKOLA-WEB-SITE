@@ -11,7 +11,8 @@ var autreRouter = require('./routes/autres');
 var contactRouter =  require('./routes/contact');
 var urlRouter = require('./routes/url');
 var admResRouter = require('./routes/admRessources');
-var ressourcesRouter = require('./routes/ressources');
+var admTendances = require('./routes/admTendances');
+var admPromandats = require('./routes/admPromandats');
 
 var app = express();
 
@@ -43,6 +44,8 @@ app.use('/ressources', ressourcesRouter);
 
 /** admn */
 app.use('/admin', admResRouter);
+app.use('/admin', admPromandats);
+app.use('admin', admTendances);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
