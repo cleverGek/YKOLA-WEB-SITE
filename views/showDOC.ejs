@@ -1,15 +1,16 @@
 <%- include("./Partials/_header")  %>
 <div class="container">
     <br><br><br><br><br><br><br>
-    <h1 class="text-center">Ressources en Texts</h1>
+    <h1 class="text-center mb-4">Ressources en Texts</h1>
     <div class="row">
         <% documents.forEach(document => { %>
             <div class="col-md-4 entries">
                 <div class="card mb-4 box-shado">
+                    <img class="card-img-top" src="/assets/about.jpg" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
                     <div class="card-body">
-                        <div class="card-title">
-                            <%= document.titre %> 
-                        </div>
+                        <h2 class="entry-title">
+                            <a href="#"><%= document.titre %></a>
+                        </h2>
                         <div class="card-text mb-2">
                             <%= document.sommaire %>
                         </div> 
