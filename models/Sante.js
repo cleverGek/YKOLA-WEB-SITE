@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Tendances = mongoose.Schema({
+const santeSchema = mongoose.Schema({
     titre: {type: Number, required: true},
     image: {type: String, required: true},
     vrai: {type: String, required: true},
@@ -8,4 +8,4 @@ const Tendances = mongoose.Schema({
     sommaire: {type: Number, required: true}
 });
 
-module.exports = mongoose.model('Tendances', Tendances);
+module.exports = mongoose.model('Sante', santeSchema);
