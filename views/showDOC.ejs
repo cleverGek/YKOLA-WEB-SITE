@@ -1,5 +1,30 @@
 <%- include("./Partials/_header")  %>
-<div class="container mb-10 mt-10">
-    <h1>ici la find all doc</h1>
+<div class="container">
+    <br><br><br><br><br><br><br>
+    <h1 class="text-center">Ressources en Texts</h1>
+    <div class="row">
+        <% documents.forEach(document => { %>
+            <div class="col-md-4 entries">
+                <div class="card mb-4 box-shado">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <%= document.titre %> 
+                        </div>
+                        <div class="card-text mb-2">
+                            <%= document.sommaire %>
+                        </div> 
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="read-more">
+                                <a href="/ressources/documents/<%= document.id %>" class="btn btn-primary" id="detailsButton">Lire la suite</a>
+                            </div>
+                        <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>  
+    </div>
+    
+
 </div>
 <%- include("./Partials/_footer")  %> 
