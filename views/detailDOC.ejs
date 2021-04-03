@@ -1,7 +1,13 @@
 <%- include("./Partials/_header")  %>
 <div class="container">
-    <br><br><br><br><br><br><br>
-    <h1>la population</h1>
-    <%= document.id %> 
+    <br><br><br><br><br><br><br> 
+    <div class="card mb-3">
+        <img src="/assets/img/about.jpg" height="700px" class="card-img-top" alt="image articles">
+        <div class="card-body">
+          <h5 class="card-title"><%= document.titre %> </h5>
+          <p class="card-text"><%= document.contenu %> </p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
 </div>
 <%- include("./Partials/_footer")  %>  

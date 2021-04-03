@@ -23,9 +23,12 @@ router.get('/documents', async function(req, res, next) {
 
 /* GET find by id. */
 router.get('/documents/:id', async (req, res, next) => {
-  const document = await Documents.findById(req.params.id);
-  if (document == null) res.redirect('/ressources/documents')
-    res.render('detailDOC', {document: document});  
+  const document = await Documents.findById(req.params.id)
+  if (document == null) {
+    res.redirect('/ressources/documents')
+  }else{
+    res.render('detailDOC', {document: document});
+  }  
 });
 
 module.exports = router;
