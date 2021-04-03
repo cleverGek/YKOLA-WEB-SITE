@@ -1,17 +1,21 @@
 var express = require('express');
+var Ducuments = require('../models/Document');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'ykola' });
+/* GET ressources pages. */
+router.get('/jeux', function(req, res, next) {
+  res.render('jeux', { title: 'ykola' });
 });
 
-/** get ressouces details page */
-router.get('/:id', async function(req, res, next){
+/* GET ressources pages. */
+router.get('/videos', function(req, res, next) {
+  res.render('videos', { title: 'ykola' });
+});
 
-  const document = await document.findOne({ id: req.params.id });
-    if(document == null) res.redirect('/')
-      res.render('documentDetails', {titre: 'ykola'});
-})
+
+/* GET find all DOC. */
+router.get('/documents', function(req, res, next) {
+  res.render('videos', { title: 'ykola' });
+});
 
 module.exports = router;

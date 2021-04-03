@@ -1,5 +1,5 @@
 var express = require('express');
-var Tendances = require('../models/Tendances');
+var Tendances = require('../models/Politique');
 var router = express.Router();
 
 /* GET a amgin ressources pages */
