@@ -4,7 +4,7 @@ const documentShema = mongoose.Schema({
     titre: {type: String, required: true},
     contenu: {type: String, required: true},
     sommaire: {type: String, required: true},
-    image: {type: String, required: false},
+    image: {type: String, required: true},
     date: {type: String, required: true},
 });
 
