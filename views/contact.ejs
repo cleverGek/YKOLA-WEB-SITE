@@ -47,31 +47,27 @@
         </div>
 
         <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" class="php-email-form">
+          <form action="" class="contact-form">
             <div class="row gy-4">
 
               <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                <input type="text" id="name" class="form-control" placeholder="Nom Complet" required>
               </div>
 
               <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                <input type="text" class="form-control" id="email" placeholder="email ou telephone" required>
               </div>
 
               <div class="col-md-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
               </div>
 
               <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                <textarea class="form-control" id="message" rows="6" placeholder="Message" required></textarea>
               </div>
 
               <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                <button type="submit">Send Message</button>
+                <button type="submit" class="btn btn-primary">Envoyer le message</button>
               </div>
 
             </div>
@@ -82,6 +78,41 @@
       </div>
 
     </div>
+    <script>
+  const contactForm = document.querySelector('.contact-form');
 
+  let name = document.getElementById('name');
+  let email = document.getElementById('email');
+  let subject = document.getElementById('subject');
+  let message = document.getElementById('message');
+
+    contactForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    let formData = {
+        name: name.value,
+        email: email.value,
+        subject: subject.value,
+        message: message.value
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/contact')
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onload = function(){
+        console.log(xhr.responseText);
+        if(xhr.responseText == 'success'){
+            alert('Email sent');
+            name.value = '';
+            email.value = '';
+            subject.value = '';
+            message.value = '';
+        }else{
+            alert('Something went wrong');
+        }
+    }
+
+    xhr.send(JSON.stringify(formData));
+  })
+    </script>
   </section><!-- End Contact Section -->
 <%- include("./Partials/_footer")  %> 
