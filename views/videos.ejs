@@ -1,10 +1,20 @@
 <%- include("./Partials/_header")  %>
-    <div class="container text-center">
-        <br><br><br><br><br>
-        <section>
-            <h1>videos ykola</h1>
-            <iframe width="1000" height="500" src="https://www.youtube.com/embed/playlist?list=PLu1c-rpPPXTucgF2TSEXN9iFyhjyn0tx8" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </section>
+    <div id="main">
+        <br><br><br>
+        <section class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/ressources/videos">Videos</a></li>
+                </ol>
+                <h1 class="text-center">videos ykola</h1>
+            </div>
+        </section><!-- End Breadcrumbs --> 
+        <div class="container">
+            <section>
+                <iframe width="1000" height="500" src="https://www.youtube.com/embed/playlist?list=PLu1c-rpPPXTucgF2TSEXN9iFyhjyn0tx8" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+        </div>
     </div>
 <%- include("./Partials/_footer")  %> 
