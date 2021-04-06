@@ -17,7 +17,7 @@ router.get('/promandats/:id', async (req, res, next) => {
   if (promandats == null) {
     res.redirect('/promandats')
   }else{
-    res.render('detailDOC', {promandats: promandats});
+    res.render('detailPROMANDATS', {promandats: promandats});
   }  
 });
 

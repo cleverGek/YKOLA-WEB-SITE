@@ -1,0 +1,24 @@
+<%- include("./Partials/_header")  %>
+<div id="main">
+    <br><br><br>
+    <section class="breadcrumbs">
+      <div class="container">
+          <ol>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/promandats">Promandats</a></li>
+              <li><a href="/promandats/<%= promandats.id %> "><%= promandats.titre %></a></li>
+          </ol>
+      </div>
+  </section><!-- End Breadcrumbs -->
+  <div class="container">
+    <div class="card mb-3 mt-5">
+      <img src="/ressources/images/<%= promandats.image %>" height="700px" class="card-img-top" alt="image articles">
+      <div class="card-body">
+        <h5 class="card-title"><%= promandats.titre %> </h5>
+        <p class="card-text"><%= promandats.contenu %> </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./Partials/_footer")  %>  
