@@ -1,5 +1,5 @@
 <%- include("./Partials/_admhead")  %>
-    <div class="container mt-5">
+    <div class="container mb-5">
         <h1>add PROMANDAT</h1>
         <form action="/addPROMANDATS" method="post">
             <div class="form-group">
@@ -26,9 +26,13 @@
                 <label for="circonstance">Circonstance</label>
                 <input type="text" name="circonstance" id="circonstance" class="form-control">
             </div>
-            <div class="form-group mb-4">
+            <div class="form-group">
                 <label for="tauxProgress">Taux de Progression</label>
                 <input type="text" name="tauxProgress" id="tauxProgress" class="form-control">
+            </div>
+            <div class="form-group mb-4">
+                <label for="image">Image</label>
+                <input type="file" name="image" id="" class="form-control">
             </div>
             <form-group>
                 <button type="submit" class="btn btn-success">Enregistrer</button>
