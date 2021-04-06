@@ -35,13 +35,13 @@ router.post('/addPROMANDATS', upload.single('image'), async function(req, res, n
     console.log(req.file);
     let proMandats =  new ProMandats({
         auteur: req.body.auteur,
-        promesse: req.body.auteur,
-        date: req.body.auteur,
-        contenu: req.body.auteur,
-        lieu: req.body.auteur,
+        promesse: req.body.promesse,
+        date: req.body.date,
+        contenu: req.body.contenu,
+        lieu: req.body.lieu,
         image: req.file.filename,
-        circonstance: req.body.auteur,
-        tauxProgress: req.body.auteur
+        circonstance: req.body.circonstance,
+        tauxProgress: req.body.tauxProgress
     })
 
     try {
