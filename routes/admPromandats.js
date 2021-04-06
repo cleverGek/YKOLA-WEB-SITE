@@ -32,20 +32,21 @@ router.get('/addPROMANDATS', function(req, res, next) {
 
 /** post doc */
 router.post('/addPROMANDATS', upload.single('image'), async function(req, res, next){
+    console.log(req.file);
     let proMandats =  new ProMandats({
         auteur: req.body.auteur,
         promesse: req.body.auteur,
         date: req.body.auteur,
         contenu: req.body.auteur,
         lieu: req.body.auteur,
-        image: req.body.auteur,
+        image: req.file.filename,
         circonstance: req.body.auteur,
         tauxProgress: req.body.auteur
     })
 
     try {
         proMandats = await proMandats.save()
-        res.redirect(`/ressources/${proMandats.id}`)
+        res.redirect('/promandats')
         console.log('cava');
     } catch (e) {
         console.log(e);
