@@ -12,12 +12,12 @@ router.get('/promandats', async function(req, res, next) {
 });
 
 /* GET find by id. */
-router.get('/documents/:id', async (req, res, next) => {
-  const document = await Documents.findById(req.params.id)
-  if (document == null) {
-    res.redirect('/ressources/documents')
+router.get('/promandats/:id', async (req, res, next) => {
+  const promandats = await Promandats.findById(req.params.id)
+  if (promandats == null) {
+    res.redirect('/promandats')
   }else{
-    res.render('detailDOC', {document: document});
+    res.render('detailDOC', {promandats: promandats});
   }  
 });
 
