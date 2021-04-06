@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var autreRouter = require('./routes/autres');
 var ressourcesRouter = require('./routes/ressources');
+var promandatRouter = require('./routes/proMandats');
 var contactRouter =  require('./routes/contact');
 var urlRouter = require('./routes/url');
 var admResRouter = require('./routes/admRessources');
@@ -43,6 +44,7 @@ app.use('/', autreRouter);
 app.use('/contact', contactRouter);
 app.use('/url', urlRouter);
 app.use('/ressources/', ressourcesRouter);
+app.use('/', promandatRouter);
 
 /** admn */
 app.use('/admin', adminRouter);
