@@ -14,6 +14,7 @@ var urlRouter = require('./routes/url');
 var admResRouter = require('./routes/admRessources');
 var admTendances = require('./routes/admTendances');
 var admPromandats = require('./routes/admPromandats');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/url', urlRouter);
 app.use('/ressources/', ressourcesRouter);
 
 /** admn */
+app.use('/admin', adminRouter);
 app.use('/admin', admResRouter);
 app.use('/admin', admPromandats);
 app.use('/admin', admTendances);
