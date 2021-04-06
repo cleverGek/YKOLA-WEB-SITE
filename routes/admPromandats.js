@@ -31,18 +31,18 @@ router.get('/addPROMANDATS', function(req, res, next) {
 });
 
 /** post doc */
-router.post('/addDOC', async function(req, res, next){
-    let document =  new Document({
+router.post('/addDOC', upload.single('image'), async function(req, res, next){
+    let proMandats =  new ProMandats({
         titre: req.body.titre,
         contenu: req.body.contenu,
         sommaire: req.body.sommaire,
-        image: req.body.image,
+        image: req.file.filename,
         date: req.body.date
     })
 
     try {
-        document = await document.save()
-        res.redirect(`/ressources/${document.id}`)
+        proMandats = await proMandats.save()
+        res.redirect(`/ressources/${proMandats.id}`)
         console.log('cava');
     } catch (e) {
         console.log(e);
