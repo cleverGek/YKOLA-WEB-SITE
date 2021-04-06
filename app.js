@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var autreRouter = require('./routes/autres');
 var ressourcesRouter = require('./routes/ressources');
 var promandatRouter = require('./routes/proMandats');
+var tendanceRouter = require('./routes/tendances');
 var contactRouter =  require('./routes/contact');
 var urlRouter = require('./routes/url');
 var admResRouter = require('./routes/admRessources');
@@ -45,6 +46,7 @@ app.use('/contact', contactRouter);
 app.use('/url', urlRouter);
 app.use('/ressources/', ressourcesRouter);
 app.use('/', promandatRouter);
+app.use('/tendances', tendanceRouter);
 
 /** admn */
 app.use('/admin', adminRouter);
