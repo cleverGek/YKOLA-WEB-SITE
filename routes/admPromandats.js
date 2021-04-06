@@ -33,11 +33,14 @@ router.get('/addPROMANDATS', function(req, res, next) {
 /** post doc */
 router.post('/addDOC', upload.single('image'), async function(req, res, next){
     let proMandats =  new ProMandats({
-        titre: req.body.titre,
-        contenu: req.body.contenu,
-        sommaire: req.body.sommaire,
-        image: req.file.filename,
-        date: req.body.date
+        auteur: req.body.auteur,
+        promesse: req.body.auteur,
+        date: req.body.auteur,
+        contenu: req.body.auteur,
+        lieu: req.body.auteur,
+        image: req.body.auteur,
+        circonstance: req.body.auteur,
+        tauxProgress: req.body.auteur
     })
 
     try {
