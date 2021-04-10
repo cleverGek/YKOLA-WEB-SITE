@@ -5,7 +5,6 @@ var Sports = require('../models/Sport');
 var Cultures = require('../models/Culture');
 var router = express.Router();
 var multer = require('multer');
-const { log } = require('debug');
 
 //define storage for image
 const storage = multer.diskStorage({
@@ -40,7 +39,7 @@ function reducer(acc, cur){
   return {...acc, [cur.fieldname] : cur}
 }
 
-/** post doc */
+/** post sante */
 router.post('/addSANTE', uploadMultiple, async function(req, res, next){
 
 let img = req.files['image'].reduce(reducer, {});
@@ -72,25 +71,31 @@ router.get('/addPOLITIQUE', function(req, res, next) {
   res.render('addPOLITIQUE', { title: 'ykola' });
 });
 
-/** post doc */
-router.post('/addDOC', async function(req, res, next){
-  let document =  new Document({
-      titre: req.body.titre,
-      contenu: req.body.contenu,
-      sommaire: req.body.sommaire,
-      image: req.body.image,
-      date: req.body.date
-  })
+/** post politique */
+router.post('/addPOLITIQUE', uploadMultiple, async function(req, res, next){
 
-  try {
-      document = await document.save()
-      res.redirect(`/ressources/${document.id}`)
-      console.log('cava');
-  } catch (e) {
-      console.log(e);
-      //res.render('admin/addDOC', {title : 'ykola'});
-  }
-});
+  let img = req.files['image'].reduce(reducer, {});
+  let baro = req.files['barometre'].reduce(reducer, {});
+  
+    let Politique =  new Politiques({
+        titre: req.body.titre,
+        vrais: req.body.vrais,
+        faux: req.body.faux,
+        sommaire: req.body.sommaire,
+        image: img.image.filename,
+        barometre: baro.barometre.filename
+    })
+   
+    try {
+      await Politique.save()
+        res.redirect('/tendances/politiques')
+        console.log('cava');
+    } catch (e) {
+        console.log(e);
+        res.render('admin/addPOLITIQUE', {title : 'ykola'});
+    }
+  });
+  
 
 /** fin politque */
 
@@ -99,25 +104,31 @@ router.get('/addSPORT', function(req, res, next) {
     res.render('addSPORT', { title: 'ykola' });
   });
 
-/** post doc */
-router.post('/addDOC', async function(req, res, next){
-  let document =  new Document({
-      titre: req.body.titre,
-      contenu: req.body.contenu,
-      sommaire: req.body.sommaire,
-      image: req.body.image,
-      date: req.body.date
-  })
+/** post sport */
+router.post('/addSPORT', uploadMultiple, async function(req, res, next){
 
-  try {
-      document = await document.save()
-      res.redirect(`/ressources/${document.id}`)
-      console.log('cava');
-  } catch (e) {
-      console.log(e);
-      //res.render('admin/addDOC', {title : 'ykola'});
-  }
-});
+  let img = req.files['image'].reduce(reducer, {});
+  let baro = req.files['barometre'].reduce(reducer, {});
+  
+    let Sport =  new Sports({
+        titre: req.body.titre,
+        vrais: req.body.vrais,
+        faux: req.body.faux,
+        sommaire: req.body.sommaire,
+        image: img.image.filename,
+        barometre: baro.barometre.filename
+    })
+   
+    try {
+        await Sport.save()
+        res.redirect('/tendances/cultures')
+        console.log('cava');
+    } catch (e) {
+        console.log(e);
+        res.render('admin/addSPORT', {title : 'ykola'});
+    }
+  });
+  
 
 /**  fin sport */
 
@@ -126,25 +137,31 @@ router.get('/addCULTURE', function(req, res, next) {
     res.render('addCULTURE', { title: 'ykola' });
   });
 
-/** post doc */
-router.post('/addDOC', async function(req, res, next){
-  let document =  new Document({
-      titre: req.body.titre,
-      contenu: req.body.contenu,
-      sommaire: req.body.sommaire,
-      image: req.body.image,
-      date: req.body.date
-  })
+/** post culture */
+router.post('/addCULTURE', uploadMultiple, async function(req, res, next){
 
-  try {
-      document = await document.save()
-      res.redirect(`/ressources/${document.id}`)
-      console.log('cava');
-  } catch (e) {
-      console.log(e);
-      //res.render('admin/addDOC', {title : 'ykola'});
-  }
-});
+  let img = req.files['image'].reduce(reducer, {});
+  let baro = req.files['barometre'].reduce(reducer, {});
+  
+    let Culture =  new Cultures({
+        titre: req.body.titre,
+        vrais: req.body.vrais,
+        faux: req.body.faux,
+        sommaire: req.body.sommaire,
+        image: img.image.filename,
+        barometre: baro.barometre.filename
+    })
+   
+    try {
+      await Culture.save()
+        res.redirect('/tendances/cultures')
+        console.log('cava');
+    } catch (e) {
+        console.log(e);
+        res.render('admin/addCULTURE', {title : 'ykola'});
+    }
+  });
+  
 
 /** fin culture */
 

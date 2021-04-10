@@ -2,32 +2,7 @@
     <div class="container mt-5">
         <H1>add SANTE</H1>
         <form action="/admin/addSANTE" method="post" enctype="multipart/form-data">
-            <div class="form-group mb-2">
-                <label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre" class="form-control">
-            </div>
-            <div class="form-group mb-4">
-                <label for="sommaire">Sommaires</label>
-                <input type="text" name="sommaire" id="sommaire" class="form-control">
-            </div>
-            <div class="form-group mb-4">
-                <label for="image">Image</label>
-                <input type="file" name="image" id="image" class="form-control">
-            </div>
-            <div class="form-group mb-4">
-                <label for="vrais">Vrais</label>
-                <textarea name="vrais" id="vrais" class="form-control"></textarea>
-            </div>
-            <div class="form-group mb-4">
-                <label for="faux">Faux</label>
-                <textarea name="faux" id="faux" class="form-control"></textarea>
-            </div>
-            <div class="form-group mb-4">
-                <label for="barometre">Barometre</label>
-                <input type="file" name="barometre" id="barometre" class="form-control" />
-            </div>
-            <button class="btn btn-success">Enregistrer</button>
-            <br><br><br>
+            <%- include("./Partials/_formTendances")  %>
         </form>
     </div>
     <%- include("./Partials/_admfoot")  %>
