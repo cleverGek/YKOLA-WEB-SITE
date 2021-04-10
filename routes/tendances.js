@@ -1,10 +1,26 @@
 var express = require('express');
 var router = express.Router();
+var Santes = require('../models/Sante');
 
 /* GET SANTE page. */
-router.get('/sante', function(req, res, next) {
-  res.render('showSANTE', { title: 'ykola' });
+router.get('/santes', async function(req, res, next) {
+  const Sante = await Santes.find().sort({
+    id: 'desc'
+  });
+  res.render('showSANTE', {santes: Sante});
 });
+
+/* GET find by id. */
+router.get('/santes/:id', async (req, res, next) => {
+  const Sante = await Santes.findById(req.params.id)
+  if (Sante == null) {
+    res.redirect('/santes')
+  }else{
+    res.render('detailSANTE', {santes: Sante});
+  }  
+});
+
+/** fin sante */
 
 /* GET POLITIQUE page. */
 router.get('/politique', function(req, res, next) {

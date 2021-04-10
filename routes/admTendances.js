@@ -57,11 +57,11 @@ let baro = req.files['barometre'].reduce(reducer, {});
  
   try {
     santes = await Sante.save()
-      res.redirect('/tendances/sante')
+      res.redirect('/tendances/santes')
       console.log('cava');
   } catch (e) {
       console.log(e);
-      //res.render('admin/addDOC', {title : 'ykola'});
+      res.render('admin/addSANTE', {title : 'ykola'});
   }
 });
 

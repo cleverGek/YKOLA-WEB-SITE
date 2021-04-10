@@ -1,0 +1,56 @@
+<%- include("./Partials/_header")  %>
+<div id="main">
+    <br><br><br>
+    <section class="breadcrumbs">
+      <div class="container">
+          <ol>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/promandats">Promandats</a></li>
+              <li><a href="/promandats/<%= promandats.id %> "><%= promandats.auteur %></a></li>
+          </ol>
+      </div>
+  </section><!-- End Breadcrumbs -->
+  <div class="container">
+    <div class="card mb-3 mt-5">
+      <img src="/ressources/images/<%= promandats.image %>" height="700px" class="card-img-top" alt="image articles">
+      <div class="card-body">
+        <h5 class="card-title"><%= promandats.auteur %> </h5>
+        <p class="card-text"><%= promandats.contenu %> </p>
+        <p class="card-text"><%= promandats.circonstance %> </p>
+        <p class="card-text"><%= promandats.tauxProgress %> </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+
+    <div class="card mb-3 mt-1">
+      <div class="card-body">
+        <p class="card-text">Bonne gouvernance</p>
+        <p class="card-text">Réforme de
+          l'administration
+          partout sur
+          l'ensemble du
+          territoire national</p>
+        <p class="card-text">0 % taux d’exécution
+        </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+
+
+    <div class="card mb-3 mt-1">
+      <div class="card-body">
+        <p class="card-text">Politique
+          étrangère
+          proactive</p>
+        <p class="card-text">Harmoniser les
+          relations bilatérales
+          avec les pays voisins</p>
+        <p class="card-text">75 % taux d’exécution
+        </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<%- include("./Partials/_footer")  %>  
