@@ -37,7 +37,7 @@ router.post('/addDOC', upload.single('image'), async function(req, res, next){
         titre: req.body.titre,
         contenu: req.body.contenu,
         sommaire: req.body.sommaire,
-        image: req.file.filename,
+        image: req.files,
         date: req.body.date
     })
 
