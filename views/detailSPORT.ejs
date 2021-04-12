@@ -1,0 +1,30 @@
+<%- include("./Partials/_header")  %>
+<div id="main">
+    <br><br><br>
+    <section class="breadcrumbs">
+      <div class="container">
+          <ol>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/santes">Sante</a></li>
+              <li><a href="/santes/<%= santes.id %> "><%= santes.titre %></a></li>
+          </ol>
+      </div>
+  </section><!-- End Breadcrumbs -->
+  <div class="container">
+    <div class="card mb-3 mt-5">
+      <img src="/tendances/images/<%= santes.image %>" height="700px" class="card-img-top" alt="image articles">
+      <div class="card-body">
+        <p class="card-title text-center"><h1><%= santes.titre %></h1></p>
+        <div class="row">
+          <div class="col-md-6 border border-primary"><p class="card-text"><%= santes.vrais %> </p></div>
+          <div class="col-md-6 border border-danger"><p class="card-text"><%= santes.faux %> </p></div>
+        </div>
+        <br>
+        <div class="text-center"><span><img src="/tendances/images/<%= santes.barometre %>" class="rounded-circle img-thumbnail" style="width: 500px;" alt=""></span></div>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<%- include("./Partials/_footer")  %>  
