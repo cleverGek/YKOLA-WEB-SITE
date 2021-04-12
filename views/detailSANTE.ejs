@@ -12,14 +12,15 @@
   </section><!-- End Breadcrumbs -->
   <div class="container">
     <div class="card mb-3 mt-5">
-      <img src="/ressources/images/<%= santes.image %>" height="700px" class="card-img-top" alt="image articles">
+      <img src="/tendances/images/<%= santes.image %>" height="700px" class="card-img-top" alt="image articles">
       <div class="card-body">
-        <h5 class="card-title"><%= santes.titre %> </h5>
+        <p class="card-title text-center"><h1><%= santes.titre %></h1></p>
         <div class="row">
           <div class="col-md-6 border border-primary"><p class="card-text"><%= santes.vrais %> </p></div>
           <div class="col-md-6 border border-danger"><p class="card-text"><%= santes.faux %> </p></div>
         </div>
-        <div><span><%= santes.barometre %></span></div>
+        <br>
+        <div class="text-center"><span><img src="/tendances/images/<%= santes.barometre %>" class="rounded-circle img-thumbnail" style="width: 500px;" alt=""></span></div>
         <p class="card-text"><small class="text-muted"></small></p>
       </div>
     </div>
