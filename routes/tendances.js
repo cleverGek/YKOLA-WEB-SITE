@@ -38,7 +38,7 @@ router.get('/politiques/:id', async (req, res, next) => {
   if (Politique == null) {
     res.redirect('/politiques')
   }else{
-    res.render('detailPOLITIQUE', {politique: Politique});
+    res.render('detailPOLITIQUE', {politiques: Politique});
   }  
 });
 
