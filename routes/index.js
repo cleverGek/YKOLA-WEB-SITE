@@ -6,12 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'ykola' });
 });
 
-router.get('/login', function(req, res, next) {
-  res.render('login', {title: 'ykola'})
+router.get('/packSouscription', function(req, res, next) {
+  res.render('packageForm', {title: 'ykola'})
 });
 
 router.get('/compte', function(req, res, next){
-  res.render('inscription', {title: 'ykola'})
+  res.render('packageForm', {title: 'ykola'})
 })
 
 module.exports = router;
