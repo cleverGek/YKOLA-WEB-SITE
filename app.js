@@ -26,8 +26,8 @@ mongoose.connect('mongodb://xavi:0987654321@ykola-shard-00-00.jtzjg.mongodb.net:
     useUnifiedTopology: true,
     usecreateIndex: true
 })
-.then(() => console.log('ok....'))
-.catch((err) => console.log('ko...', err))
+.then(() => console.log('Bravo connecter a la base de données ykolabase'))
+.catch((err) => console.log('desoler ykola pas disponible', err))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
