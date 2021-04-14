@@ -7,58 +7,81 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/ressources/jeux">jeux</a></li>
             </ol>
-            <h1 class="text-center">Formulaire Package ykola</h1>
+            <h1 class="text-center">Formulaire</h1>
         </div>
     </section><!-- End Breadcrumbs --> 
     <div class="container">
         <br><br><br><br>
-        <form>
+        <form class="contact-form">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <label for="inputPassword4">Nom</label>
+                <input type="text" class="form-control" id="inputNom" placeholder="votre nom">
               </div>
-            </div>
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+                <label for="inputCity">message</label>
+                <textarea name="" id="inputEntreprise" cols="30" rows="10" class="form-control"></textarea>
               </div>
-              <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
+              <div class="form-group col-md-6">
+                <label for="inputState">package</label>
+                <select id="inputSubject" class="form-control">
+                  <option selected>package...</option>
+                  <option value="basic">Basic</option>
+                  <option value="standard">Standard</option>
+                  <option value="Advanced">Advanced</option>
+                  <option value="pro">Pro</option>
                 </select>
               </div>
-              <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+              <br>
+            <button type="submit" class="btn btn-primary">Envoyer Demande</button>
           </form>
         <br><br><br><br>
     </div>
 </div>
+
+<script>
+  const contactForm = document.querySelector('.contact-form');
+
+let name = document.getElementById('inputNom');
+let email = document.getElementById('inputEmail');
+let subject = document.getElementById('inputSubject');
+let message = document.getElementById('inputEntreprise');
+
+  contactForm.addEventListener('submit', (e) =>{
+  e.preventDefault();
+  let formData = {
+      name: name.value,
+      email: email.value,
+      subject: subject.value,
+      message: message.value
+  }
+
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', '/packSouscription')
+  xhr.setRequestHeader('content-type', 'application/json');
+  xhr.onload = function(){
+      console.log(xhr.responseText);
+      if(xhr.responseText == 'success'){
+          alert('Email envoyer');
+          name.value = '';
+          email.value = '';
+          subject.value = '';
+          message.value = '';
+      }else{
+          alert('Something went wrong');
+      }
+  }
+
+  xhr.send(JSON.stringify(formData));
+})
+  </script>
+</section>
+</script>
+
 <%- include("./Partials/_footer")  %> 
