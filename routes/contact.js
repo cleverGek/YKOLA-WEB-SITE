@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var swal = require('sweetalert');
 
 /* GET A contact page */
 router.get('/', function(req, res, next) {
@@ -33,6 +34,9 @@ router.post('/', function(req, res, next) {
         }else{
             console.log('Email sent: '+ info.response);
             res.send('success');
+            swal("Are you sure you want to do this?", {
+                buttons: ["Oh noez!", true],
+              });
         }
     })
 });
