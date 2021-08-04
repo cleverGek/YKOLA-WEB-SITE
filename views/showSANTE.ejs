@@ -1,0 +1,38 @@
+<%- include("./Partials/_header")  %>
+<div id="main">
+    <br><br><br>
+    <section class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/santes">santes</a></li>
+            </ol>
+        </div>
+    </section><!-- End Breadcrumbs -->  
+    <div class="container mt-5">
+        <div class="row">
+            <% santes.forEach(sante => { %>
+                <div class="col-md-4 entries">
+                    <div class="card mb-4 box-shado">
+                        <img class="card-img-top" src="/tendances/images/<%= sante.image %>" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class="entry-title">
+                                <a href="#"><%= sante.titre %></a>
+                            </h2>
+                            <div class="card-text mb-2">
+                                <%= sante.sommaire %>
+                            </div> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="read-more">
+                                    <a href="/tendances/santes/<%= sante.id %>" class="btn btn-primary" id="detailsButton">Lire la suite</a>
+                                </div>
+                            <small class="text-muted"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>  
+        </div>
+    </div>
+</div>
+<%- include("./Partials/_footer")  %> 
