@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //root
 app.use("/", require("./routes/Index.Routes"));
+app.use("/", require("./routes/Chek.Routes"));
 app.use("/ressources", require("./routes/Blog.Routes"));
 app.use("/tendances", require("./routes/Tendance.Routes"));
 
