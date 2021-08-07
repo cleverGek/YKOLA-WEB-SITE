@@ -1,118 +1,138 @@
-<%- include("./Partials/_header")  %>
+<%- include("./Partials/_header") %>
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
-<br><br><br><br><br>
-    <div class="container" data-aos="fade-up">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h2>Contact</h2>
+      <p>Contact Us</p>
+    </header>
 
-      <header class="section-header">
-        <h2>Contact</h2>
-        <p>Contact Us</p>
-      </header>
-
-      <div class="row gy-4">
-
-        <div class="col-lg-6">
-
-          <div class="row gy-4">
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-geo-alt"></i>
-                <h3>Address</h3>
-                <p>Avenue de Huilerie 5042,<br>Gombe Kinshasa</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-telephone"></i>
-                <h3>Call Us</h3>
-                <p> +243 817 787 472<br> +243 812 922 718</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-envelope"></i>
-                <h3>Email Us</h3>
-                <p>contact@ykola.org<br>ykola.rdc@gmail.com</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-clock"></i>
-                <h3>Open Hours</h3>
-                <p>Lundi - Samedi<br>8:00AM - 04:00PM</p>
-              </div>
+    <div class="row gy-4">
+      <div class="col-lg-6">
+        <div class="row gy-4">
+          <div class="col-md-6">
+            <div class="info-box">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <p>Avenue de Huilerie 5042,<br />Gombe Kinshasa</p>
             </div>
           </div>
-
-        </div>
-
-        <div class="col-lg-6">
-          <form action="" class="contact-form">
-            <div class="row gy-4">
-
-              <div class="col-md-6">
-                <input type="text" id="name" class="form-control" placeholder="Nom Complet" required>
-              </div>
-
-              <div class="col-md-6 ">
-                <input type="text" class="form-control" id="email" placeholder="email ou telephone" required>
-              </div>
-
-              <div class="col-md-12">
-                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
-              </div>
-
-              <div class="col-md-12">
-                <textarea class="form-control" id="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-
-              <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Envoyer le message</button>
-              </div>
-
+          <div class="col-md-6">
+            <div class="info-box">
+              <i class="bi bi-telephone"></i>
+              <h3>Call Us</h3>
+              <p>
+                +243 817 787 472<br />
+                +243 812 922 718
+              </p>
             </div>
-          </form>
-
+          </div>
+          <div class="col-md-6">
+            <div class="info-box">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Us</h3>
+              <p>contact@ykola.org<br />ykola.rdc@gmail.com</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-box">
+              <i class="bi bi-clock"></i>
+              <h3>Open Hours</h3>
+              <p>Lundi - Samedi<br />8:00AM - 04:00PM</p>
+            </div>
+          </div>
         </div>
-
       </div>
 
+      <div class="col-lg-6">
+        <form action="" class="contact-form">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Nom Complet"
+                required
+              />
+            </div>
+
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="email ou telephone"
+                required
+              />
+            </div>
+
+            <div class="col-md-12">
+              <input
+                type="text"
+                class="form-control"
+                id="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+
+            <div class="col-md-12">
+              <textarea
+                class="form-control"
+                id="message"
+                rows="6"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">
+                Envoyer le message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <script>
-  const contactForm = document.querySelector('.contact-form');
+  </div>
+  <script>
+    const contactForm = document.querySelector(".contact-form");
 
-  let name = document.getElementById('name');
-  let email = document.getElementById('email');
-  let subject = document.getElementById('subject');
-  let message = document.getElementById('message');
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let subject = document.getElementById("subject");
+    let message = document.getElementById("message");
 
-    contactForm.addEventListener('submit', (e) =>{
-    e.preventDefault();
-    let formData = {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let formData = {
         name: name.value,
         email: email.value,
         subject: subject.value,
-        message: message.value
-    }
+        message: message.value,
+      };
 
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/contact')
-    xhr.setRequestHeader('content-type', 'application/json');
-    xhr.onload = function(){
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "/contact");
+      xhr.setRequestHeader("content-type", "application/json");
+      xhr.onload = function () {
         console.log(xhr.responseText);
-        if(xhr.responseText == 'success'){
-            alert('Email sent');
-            name.value = '';
-            email.value = '';
-            subject.value = '';
-            message.value = '';
-        }else{
-            alert('Something went wrong');
+        if (xhr.responseText == "success") {
+          alert("Email sent");
+          name.value = "";
+          email.value = "";
+          subject.value = "";
+          message.value = "";
+        } else {
+          alert("Something went wrong");
         }
-    }
+      };
 
-    xhr.send(JSON.stringify(formData));
-  })
-    </script>
-  </section><!-- End Contact Section -->
-<%- include("./Partials/_footer")  %> 
+      xhr.send(JSON.stringify(formData));
+    });
+  </script>
+</section>
+<!-- End Contact Section -->
+<%- include("./Partials/_footer") %>
