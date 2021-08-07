@@ -1,2 +1,9 @@
-const express = require("express");
-const route = express.Router();
+//home
+exports.home = (req, res) => {
+  res.render("index");
+};
+
+//check up
+exports.check = (req, res) => {
+  res.render("utils/pages/check");
+};

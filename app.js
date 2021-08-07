@@ -7,8 +7,6 @@ var logger = require("morgan");
 require("dotenv").config();
 require("./database/cnx");
 
-//midlleware
-
 var app = express();
 
 // view engine setup
@@ -22,6 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 //root
+app.use("/", require("./routes/Index.Routes"));
+app.use("/ressources", require("./routes/Blog.Routes"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
