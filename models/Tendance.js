@@ -1,12 +1,29 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const santeSchema = mongoose.Schema({
-    titre: {type: String, required: true},
-    image: {type: String, required: true},
-    vrais: {type: String, required: true},
-    faux: {type: String, required: true},
-    sommaire: {type: String, required: true},
-    barometre: {type: String, require: true}
-});
+const tendanceSchema = mongoose.Schema(
+  {
+    titre: { type: String, required: true },
+    image: { type: String, required: true },
+    vrais: [
+      {
+        element: String,
+      },
+    ],
+    faux: [
+      {
+        element: String,
+      },
+    ],
+    sommaire: { type: String, required: true },
+    contenu: { type: String, require: true },
+    secteur: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Secteur",
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-module.exports = mongoose.model('Sante', santeSchema);
+module.exports = mongoose.model("Tendance", tendanceSchema);

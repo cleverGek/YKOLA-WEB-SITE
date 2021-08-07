@@ -1,14 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const ProMandats = mongoose.Schema({
-    auteur: {type: String, required: true},
-    promesse: {type: String, required: true},
-    contenu: {type: String, required: true},
-    date: {type: String, required: true},
-    lieu: {type: String, required: true},
-    image: {type: String, required: true},
-    circonstance: {type: String, required: true},
-    tauxProgress: {type: String, required: true},
-});
+const newsSchema = mongoose.Schema(
+  {
+    email: { type: String, required: true },
+  },
+  {
+    timestamp: true,
+  }
+);
 
-module.exports = mongoose.model('ProMandats', ProMandats);
+module.exports = mongoose.model("News", newsSchema);

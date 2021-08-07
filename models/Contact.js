@@ -1,12 +1,15 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const politiqueSchema = mongoose.Schema({
-    titre: {type: String, required: true},
-    image: {type: String, required: true},
-    vrais: {type: String, required: true},
-    faux: {type: String, required: true},
-    sommaire: {type: String, required: true},
-    barometre: {type: String, require: true}
-});
+const contactSchema = mongoose.Schema(
+  {
+    noms: { type: String, required: true },
+    titre: { type: String, required: true },
+    email: { type: String, required: true },
+    contenu: { type: String, required: true },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-module.exports = mongoose.model('politique', politiqueSchema);
+module.exports = mongoose.model("Contact", contactSchema);
