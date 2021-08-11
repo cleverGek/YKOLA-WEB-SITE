@@ -1,3 +1,63 @@
 <%- include("../includes/_header") %>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Check<br /><br /><br /><br />
+<main>
+  <br /><br />
+  <section class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="/" class="display-6">Accueil</a></li>
+        <li><a href="/verification" class="display-6">Verification</a></li>
+      </ol>
+    </div>
+  </section>
+  <section>
+    <h1 class="text-center display-3">Verification des faites</h1>
+    <div class="container">
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">votre pseudo</label>
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            id="inputEmail4"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">votre email</label>
+          <input
+            type="email"
+            class="form-control form-control-lg"
+            id="inputPassword4"
+          />
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Votre url</label>
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            id="inputAddress"
+            placeholder="votre lient source"
+          />
+        </div>
+
+        <div class="col-md-12">
+          <label for="formFileLg" class="form-label">Document sources</label>
+          <input
+            class="form-control form-control-lg"
+            id="formFileLg"
+            type="file"
+          />
+        </div>
+
+        <div class="col-12">
+          <div class="gap-2 mx-auto d-grid col-6">
+            <button class="btn btn-outline-primary btn-lg" type="button">
+              Verifier
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
 <%- include("../includes/_footer") %>
