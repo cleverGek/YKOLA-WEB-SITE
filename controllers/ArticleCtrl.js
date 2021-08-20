@@ -96,6 +96,7 @@ exports.findArticleByCategorie = (req, res) => {
       .then((data) => {
         if (!data) {
           res.status(404).send({ message: "Not found user with id " + id });
+          res.redirect("/add-user");
         } else {
           res.send(data);
         }

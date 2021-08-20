@@ -15,7 +15,7 @@ route.get("/videos", videos);
 route.get("/documents", document);
 
 //categorie
-route.post("categorie/add", createCategorie);
+route.post("/categorie/add", createCategorie);
 
 //article
 route.post("/add", createArticle);
