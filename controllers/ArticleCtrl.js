@@ -57,6 +57,66 @@ exports.findArticle = (req, res) => {
   }
 };
 
+// retrieve and return all users/ retrive and return a single user
+exports.findArticleById = (req, res) => {
+  if (req.query.id) {
+    const id = req.query.id;
+
+    Article.findById(id)
+      .then((data) => {
+        if (!data) {
+          res.status(404).send({ message: "Not found user with id " + id });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((err) => {
+        res.status(500).send({ message: "Erro retrieving user with id " + id });
+      });
+  } else {
+    Article.find()
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || "Error Occurred while retriving user information",
+        });
+      });
+  }
+};
+
+// retrieve and return all users/ retrive and return a single user
+exports.findArticleByCategorie = (req, res) => {
+  if (req.query.id) {
+    const id = req.query.id;
+
+    Article.findById(id)
+      .then((data) => {
+        if (!data) {
+          res.status(404).send({ message: "Not found user with id " + id });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((err) => {
+        res.status(500).send({ message: "Erro retrieving user with id " + id });
+      });
+  } else {
+    Article.find()
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || "Error Occurred while retriving user information",
+        });
+      });
+  }
+};
+
 // Update a new idetified user by user id
 exports.updateArticle = (req, res) => {
   if (!req.body) {
