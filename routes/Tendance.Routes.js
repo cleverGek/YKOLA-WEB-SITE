@@ -19,9 +19,9 @@ route.get("/cultures", culture);
 route.post("/secteur/add", createSecteur);
 
 //tendences
-route.post("tendance/add", createTendance);
-route.get("tendances", findTendance);
-route.get("tendance/:id", findTendanceById);
-route.get("tendance/secteur/:id", findTendanceBySecteur);
+route.post("/add", createTendance);
+route.get("/", findTendance);
+route.get("/:id", findTendanceById);
+route.get("/secteur/:id", findTendanceBySecteur);
 
 module.exports = route;

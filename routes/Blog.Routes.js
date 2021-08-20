@@ -18,9 +18,9 @@ route.get("/documents", document);
 route.post("categorie/add", createCategorie);
 
 //article
-route.post("article/add", createArticle);
-route.get("articles", findArticle);
-route.get("article/:id", findArticleById);
-route.get("article/categorie/:id", findArticleByCategorie);
+route.post("/add", createArticle);
+route.get("/", findArticle);
+route.get("/:id", findArticleById);
+route.get("/categorie/:id", findArticleByCategorie);
 
 module.exports = route;
