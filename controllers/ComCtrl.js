@@ -1,5 +1,6 @@
 //var News = require("../models/News");
 var Contact = require("../models/Contact");
+var News = require("../models/News");
 
 // create and save new user
 exports.createContact = (req, res) => {
@@ -34,6 +35,63 @@ exports.findContact = (req, res) => {
     const id = req.query.id;
 
     Contact.findById(id)
+      .then((data) => {
+        if (!data) {
+          res.status(404).send({ message: "Not found user with id " + id });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((err) => {
+        res.status(500).send({ message: "Erro retrieving user with id " + id });
+      });
+  } else {
+    Contact.find()
+      .then((user) => {
+        res.send(user);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || "Error Occurred while retriving user information",
+        });
+      });
+  }
+};
+
+// News
+exports.createNews = (req, res) => {
+  // validate request
+  if (!req.body) {
+    res.status(400).send({ message: "Content can not be emtpy!" });
+    return;
+  }
+
+  // new user
+  const news = new News(req.body);
+
+  // save user in the database
+  contact
+    .save()
+    .then((data) => {
+      //res.send(data)
+      res.redirect("/add-user");
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message ||
+          "Some error occurred while creating a create operation",
+      });
+    });
+};
+
+// News
+exports.findNews = (req, res) => {
+  if (req.query.id) {
+    const id = req.query.id;
+
+    News.findById(id)
       .then((data) => {
         if (!data) {
           res.status(404).send({ message: "Not found user with id " + id });
