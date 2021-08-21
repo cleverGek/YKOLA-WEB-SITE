@@ -10,11 +10,47 @@
           <li class="breadcrumb-item active" aria-current="page">Overview</li>
         </ol>
       </nav>
-      <h1 class="h2">Publication articles</h1>
-      <p>
-        This is the homepage of a simple admin interface which is part of a
-        tutorial written on Themesberg
-      </p>
+      <h1 class="mt-4 text-center h2">Publication articles</h1>
+      <div class="container">
+        <div class="card">
+          <div class="card-body" style="padding: 50px">
+            <form class="row g-3">
+              <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Titre</label>
+                <input type="email" class="form-control" id="inputEmail4" />
+              </div>
+              <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Sommaire</label>
+                <input type="email" class="form-control" id="inputEmail4" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Image</label>
+                <input type="file" class="form-control" id="inputEmail4" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Categorie</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Contenue</label>
+                <textarea name="contenu" id="" class="form-control"></textarea>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-outline-primary">
+                  Enregistrer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <footer class="pt-5 d-flex justify-content-between">
         <span
