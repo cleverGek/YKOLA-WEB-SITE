@@ -1,14 +1,14 @@
 //jeux
 exports.jeux = (req, res) => {
-  res.render("utils/pages/blog/jeux");
+  res.render("./pages/blog/jeux");
 };
 
 //videos
 exports.videos = (req, res) => {
-  res.render("utils/pages/blog/videos");
+  res.render("./pages/blog/videos");
 };
 
 //documets
 exports.document = (req, res) => {
-  res.render("utils/pages/blog/document");
+  res.render("./pages/blog/document");
 };
