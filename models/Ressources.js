@@ -6,9 +6,8 @@ const tendanceSchema = mongoose.Schema(
     image: { type: String, required: true },
     sommaire: { type: String, required: true },
     contenu: { type: String, require: true },
-    secteur: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Secteur",
+    secteurs: {
+      name: { type: String, required: true },
     },
   },
   {

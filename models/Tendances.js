@@ -6,9 +6,8 @@ const articleSchema = mongoose.Schema(
     contenu: { type: String, required: true },
     sommaire: { type: String, required: true },
     image: { type: String, required: true },
-    categorie: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Categorie",
+    categories: {
+      name: { type: String, required: true },
     },
   },
   {

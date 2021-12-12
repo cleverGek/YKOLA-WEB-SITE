@@ -1,4 +1,4 @@
-var Article = require("../models/Article");
+var Article = require("../models/Tendances");
 
 // create and save new user
 exports.createArticle = (req, res) => {
